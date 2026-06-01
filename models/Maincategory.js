@@ -6,7 +6,11 @@ const mainCategorySchema = new mongoose.Schema({
     required: [true, 'Main category name is mandatory'],
     unique: true
   },
-}, { timestamps: true });
+  active: {
+    type: Boolean,
+    default: true
+  } 
+});
 
 const MainCategory = mongoose.model('MainCategory', mainCategorySchema);
 
